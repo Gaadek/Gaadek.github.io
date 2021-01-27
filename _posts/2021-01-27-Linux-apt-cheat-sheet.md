@@ -22,7 +22,7 @@ A **package manager** handles this for you by using a list of repositories (stor
 
 Below a list of the most common apt commands 
 
-| Name | Command |
+| I want to... | ...run the folowing command |
 | :------ |:--- |
 | Update list of available packages in repositories | `sudo apt update` |
 | Upgrade all installed packages | `sudo apt upgrade` |

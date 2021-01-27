@@ -23,7 +23,8 @@ Linux provides several package managers, the most common are `apt-get` and `apt`
 
 ## Cheat sheet
 
-#### APT 
+#### APT
+
 | Name | Command |
 | :------ |:--- |
 | Update list of available packages in repositories | `sudo apt update` |
@@ -36,5 +37,3 @@ Linux provides several package managers, the most common are `apt-get` and `apt`
 | List installed packages | `sudo apt list --installed` |
 | Find installed package | `sudo apt list --installed | grep <package_name>` |
 | View package information | `sudo apt show <package_name>` |
-
-

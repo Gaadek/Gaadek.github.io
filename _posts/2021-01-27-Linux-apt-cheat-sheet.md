@@ -20,7 +20,7 @@ A **package manager** handles this for you by using a list of repositories (stor
 
 ## How do I use apt?
 
-Here is below a list of the most common apt commands 
+Below a list of the most common apt commands 
 
 | Name | Command |
 | :------ |:--- |

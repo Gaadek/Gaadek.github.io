@@ -24,7 +24,6 @@ Linux provides several package managers, the most common are `apt-get` and `apt`
 ## Cheat sheet
 
 #### APT
-x
 
 | Name | Command |
 | :------ |:--- |

@@ -6,34 +6,31 @@ tags: [linux, apt]
 comments: true
 ---
 
-## The basics
-Linux uses **packages** to install **software**.
+##  What is apt? 
+Apt stands for **Advanced Packaging Tool**. It is a tool that allows to manage the installation, updating and removal of software packages in a Debian based Linux system. Such a tool is called a **package manager** and there ar eplenty of them, however the most known are `apt-get` and `apt` (apt is newer than apt-get).
 
-*What is a package?*  
-A package is a program to be installed as well as its **dependencies**, i.e. the libraries (which are also programs) needed to run the software.
-So when you install a software (from a package), you will also install all its dependencies.
+Behind the hood, apt interacts with **dpkg**, the Debian packaging system whose purpose is to pack software in an easy to install entity. Apt offers a user friendly tool for interacting with dpkg.
 
-*OK, but how do I find a package?*  
-Packages are indexed in **repositories**. So, when you want to install a software, you have to query a repository to find the desired pacakge.  
-This is automatically handled by your *package manager* that uses your list of repositories `/etc/apt/sources.list` to search for packages.
+## What is a package?
+A package is a software to be installed as well as its **dependencies**, i.e. the neeed libraries.
 
-*Package manager? I'm lost*  
-Package managers are programs that allow to manage the packages of your OS. With package managers, you can install, update and remove packages.  
-Linux provides several package managers, the most common are `apt-get` and `apt`.
+## How do I find packages?
+Packages are indexed in **repositories**. When you want to install a software, you have to query a repository to find the needed package.  
+A **package manager** handles this for you by using a list of repositories (stored here: `/etc/apt/sources.list`) .
 
-## Cheat sheet
+## How do I use apt?
 
-#### APT
+Here is below a list of the most common apt commands 
 
 | Name | Command |
 | :------ |:--- |
 | Update list of available packages in repositories | `sudo apt update` |
-| Upgrade installed packages | `sudo apt upgrade` |
+| Upgrade all installed packages | `sudo apt upgrade` |
 | Remove useless packages | `sudo apt autoremove` |
 | Search for a package | `sudo apt search <package_name>` |
 | Install a package | `sudo apt install <package_name>` |
 | Install multiple packages | `sudo apt install <package_name1> <package_name2>` |
 | Remove a package | `sudo apt remove <package_name>` |
 | List installed packages | `sudo apt list --installed` |
-| Find installed package | `sudo apt list --installed | grep <package_name>` |
+| Filter installed package | `sudo apt list --installed | grep <package_name>` |
 | View package information | `sudo apt show <package_name>` |

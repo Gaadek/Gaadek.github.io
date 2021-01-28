@@ -3,11 +3,10 @@ layout: post
 title: Linux APT cheat sheet
 subtitle: It can be hard to remember everything
 tags: [linux, apt]
-comments: true
 ---
 
-##  What is apt? 
-Apt stands for **Advanced Packaging Tool**. It is a tool that allows to manage the installation, updating and removal of software packages in a Debian based Linux system. Such a tool is called a **package manager** and there ar eplenty of them, however the most known are `apt-get` and `apt` (apt is newer than apt-get).
+## What is a APT?
+Apt stands for **Advanced Packaging Tool**. This software allows to manage the installation, updating and removal of packages in a Debian based Linux system. Such a tool is called a **package manager** and there are plenty of them, the most well known being `apt-get` and `apt`.
 
 Behind the hood, apt interacts with **dpkg**, the Debian packaging system whose purpose is to pack software in an easy to install entity. Apt offers a user friendly tool for interacting with dpkg.
 

@@ -8,9 +8,30 @@ It's sometimes amazing how afraid are some people when they hear `git`. And hone
 
 ## Scenario
 1) A branch `new-feature` has been created from branch `master`
-2) **After** `new-feature` has been created, another branch `bug-fix` has been created from `master` then merged into
-3) You'd like to get the updates from `bug-fix` into `new-feature`
+```
+A---B ← master
+     \
+      C ← new-feature
+```
 
+2) **After** `new-feature` has been created, another branch `bug-fix` has been created from `master` then merged into
+```
+      D ← bug-fix
+     / \
+A---B---E ← master
+     \
+      C ← new-feature
+```
+
+
+3) You'd like to get the updates from `bug-fix` into `new-feature`
+```
+      D ← bug-fix
+     / \
+A---B---E ← master
+         \
+          C ← new-feature
+```
 
 ## Process
 **Step #1:** Get the latest master branch which contains the `bug-fix` commits  

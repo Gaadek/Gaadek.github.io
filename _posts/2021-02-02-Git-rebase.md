@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Git rebase explained to my little sister
+title: Git rebase explained in 3 steps
 tags: [git, rebase]
 ---
 
-It's sometimes amazing how afraid are some people when they hear `git`. And honestly, it was (is?) my case, I'm far from mastering git, so I need small sticky notes to remember ho do do things well. Today I'll write to myself how to perform a git rebase and what it does.
+It's sometimes amazing how Git facilitate coder's life. The `rebase` operation is one of my favorite because I used it regularly, even when I work alone on a project. To those who wonders what that does and how to use it, I wrote this little article.
 
 ## Scenario
 1) A branch `new-feature` has been created from branch `master`

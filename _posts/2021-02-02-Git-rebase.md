@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git rebase explained in 3 steps
+thumbnail-img: /assets/img/metro.jpg
 tags: [git, rebase]
 ---
 

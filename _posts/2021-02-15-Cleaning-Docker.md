@@ -1,0 +1,58 @@
+---
+layout: post
+title: Cleaning Docker
+subtitle: Not spring yet, but why waiting?
+tags: [docker]
+---
+
+Today is time to clean your laptop. When, like me, you use Docker to test plenty of things, you may notice it uses disk space. After few months, it may represent a lot of lost space, so let's track and remove unused Docker stuff!
+
+## Containers
+First of all, to list all containers:
+```bash
+docker ps -a
+```
+
+And to remove all non running containers:
+```bash
+docker rm $(docker ps -qa)
+```
+
+To remove all exited containers with their volumes:
+To remove all unused containers, including their volumen, you can run this:
+```bash
+docker rm -v $(docker ps -aqf status=exited)
+```
+
+## Volumes
+First of all, to list volumes:
+```bash
+docker volume ls
+```
+
+You can remove volumes for containers that does not exist anymore:
+```bash
+docker volume rm $(docker volume ls -qf dangling=true)
+```
+
+## Images
+First of all, to list images:
+```bash
+docker image ls
+```
+
+To delete intermediate images (used to build another images):
+```bash
+docker rmi $(docker images -qf dangling=true)
+```
+
+To delete all images not used by any container: 
+```bash
+docker image prune -a
+```
+
+If the previous command is too hardcore, you can use this one:
+```bash
+docker image prune -a --force --filter "until=2017-01-04T00:00:00"
+```
+It will delete all images created **before** 04JAN2017

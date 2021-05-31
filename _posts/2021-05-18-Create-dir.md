@@ -5,13 +5,8 @@ thumbnail-img: /assets/img/sas.png
 tags: [sas,create,directory]
 ---
 
-This macro function allows to create a directory from SAS. I use it very often, mainly to create output folder with the current date, to classify my outputs.
-
-## Description
-Macro function for creating a directory.  
-It checks if the directory to create already exists, then ensures the parent directory is valid and eventuelly create the new directory.  
-  
-This macro is OS agnostic and uses only native SAS functions.
+This macro function allows to create a directory from SAS. I use it very often, mainly to create output folder with the current date, to classify my outputs.  
+The macro is complete - at least I hope so -: it checks if the directory to create already exists, then ensures the parent directory is valid and eventuelly create the new directory. It is alse OS agnostic, i.e. it can run on either Windows or Unix systems, and uses only native SAS functions.
 
 ## Sample
 ```

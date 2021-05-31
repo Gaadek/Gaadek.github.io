@@ -1,19 +1,18 @@
 ---
 layout: post
-title: Create a directory
+title: List directory content
 thumbnail-img: /assets/img/sas.png
-tags: [sas],[directory]
+tags: [sas,get,list,content,directory]
 ---
 
-## Purpose
-Get (or list) the content of a directory.  
-It checks if the directory to create already exists, then ensures the parent directory is valid and eventuelly create the new directory.
+This macro function gets (i.e. lists) the content of a directory.  
+It checks if the given directory exists and is a valid directory (i.e. not a file). Then it lists all the content into a dataset whose items are assigned a flag to indicate if a given member is a file (memtype=file) or a directory (memtype=directory).  
 
 ## Sample
 ```
-%get_dir_content(new, /home/user/new)
+%get_dir_content(new_content, /home/user/new)
 ```
-The code above list the content of "/home/user/new" directory (either file or directory) and report as a dataset "new".
+The code above lists the content of "/home/user/new" directory and reports the content in the dataset "new_content".
 
 ## Code
 ```

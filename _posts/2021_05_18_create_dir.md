@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create directory
+title: Create a directory
 thumbnail-img: /assets/img/sas.png
 tags: [sas],[directory]
 ---

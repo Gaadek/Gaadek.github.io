@@ -2,13 +2,10 @@
 layout: post
 title: Delete a directory
 thumbnail-img: /assets/img/sas.png
-tags: [sas],[directory]
+tags: [sas,delete,directory]
 ---
 
-## Purpose
-Macro function for deleting a directory.
-
-This macro is OS agnostic and uses only native SAS functions.
+After the macro function which permits to [create directories](2021-05-18-Create_dir), this time I present the macro I use to delete directories. This macro is OS agnostic and uses only native SAS functions.  
 
 ## Sample
 ```

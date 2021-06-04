@@ -2,7 +2,7 @@
 layout: post
 title: List directory content
 thumbnail-img: /assets/img/sas.png
-tags: [sas,get,list,content,directory]
+tags: [sas,macro,get,list,content,directory]
 ---
 
 This macro function gets (i.e. lists) the content of a directory.  

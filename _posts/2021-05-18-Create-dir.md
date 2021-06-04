@@ -2,7 +2,7 @@
 layout: post
 title: Create a directory
 thumbnail-img: /assets/img/sas.png
-tags: [sas,create,directory]
+tags: [sas,macro,create,directory]
 ---
 
 This macro function allows to create a directory from SAS. I use it very often, mainly to create output folder with the current date, to classify my outputs.  

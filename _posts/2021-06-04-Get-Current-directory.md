@@ -2,7 +2,7 @@
 layout: post
 title: Get current directory
 thumbnail-img: /assets/img/sas.png
-tags: [sas,current,directory]
+tags: [sas,macro,current,directory]
 ---
 
 This macro function allows to get the directory (i.e. location) of the current SAS program.  

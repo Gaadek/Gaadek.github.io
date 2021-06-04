@@ -2,7 +2,7 @@
 layout: post
 title: Delete a directory
 thumbnail-img: /assets/img/sas.png
-tags: [sas,delete,directory]
+tags: [sas,macro,delete,directory]
 ---
 
 After the macro function which permits to [create directories](2021-05-18-Create_dir), this time I present the macro I use to delete directories. 

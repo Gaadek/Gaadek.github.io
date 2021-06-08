@@ -10,7 +10,7 @@ Note: the SAS program must have been saved at least once befre using this macro.
 
 ## Sample
 ```
-%%let cur_dir = %get_cur_dir;
+%let cur_dir = %get_cur_dir;
 ```
 The code above retrieves the current SAS program directory and stores it  in `cur_dir` macro variable.
 

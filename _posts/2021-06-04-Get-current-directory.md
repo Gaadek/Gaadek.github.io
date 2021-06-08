@@ -12,11 +12,11 @@ Note: the SAS program must have been saved at least once befre using this macro.
 ```
 %%let cur_dir = %get_cur_dir;
 ```
-The code above will retrieve the current SAS program directory and store it  in `cur_dir` macro variable.
+The code above retrieves the current SAS program directory and stores it  in `cur_dir` macro variable.
 
 ## Code
 ```
-*-- Macro to list the content of a directory --*;
+*-- Macro to get the current SAS program directory --*;
 %macro get_cur_dir;
     %let rc = %sysfunc(filename(filrf, .));
     %let curdir = %sysfunc(pathname(&filrf.));

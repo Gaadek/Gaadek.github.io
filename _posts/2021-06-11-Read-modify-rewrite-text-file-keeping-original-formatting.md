@@ -12,11 +12,11 @@ However, we can easily with little effort keep the original text formatting, and
 ## Reading the original file
 I quickly describe the reading process which is very common stuff in SAS. Please note I always refer to external files as macro function, which makes the setup process much more easier by grouping all variable in the top section of my programs:
 ```
-    data tmp;
-        infile "&input_file." delimiter='0A'x missover pad lrecl=2000 firstobs=1;
+data tmp;
+    infile "&input_file." delimiter='0A'x missover pad lrecl=2000 firstobs=1;
 
-        attrib row_data format=$2000. informat=$char2000.;
-        input row_data $;
+    attrib row_data format=$2000. informat=$char2000.;
+    input row_data $;
 ```
 The code above read the input file defined by the `input_file` macro variable. Nothing tricky there, I'm usign the correct delimiter so the code should work on both Windows & Unix systems.
 I also assume the maximum length of a line will not exceed 2000 chars, this can be adjusted to your needs.
@@ -35,18 +35,18 @@ After this step, we can perform modifications (renaming content, ...)
 ## Write output file with original formatting
 Finally, once the modifications are complete, we can write the output file. Like the reading process, the writting process is straight forward:
 ```
-    filename outf "&output_file." lrecl=2000;
+filename outf "&output_file." lrecl=2000;
 
-    data _null_;
-        file outf;
+data _null_;
+    file outf;
 
-        set tmp;
+    set tmp;
 
-        if not missing(row_data) then
-            put @offset row_data;
-        else
-            put ;
-    run;
+    if not missing(row_data) then
+        put @offset row_data;
+    else
+        put ;
+run;
 ```
 There, you can see when the data to be written are not empty, the we position the output cursor at the offset value collected at the reading process.
 

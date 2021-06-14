@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Read, modify, then write a text file while keeping the original text formatting
+title: Read, modify, then write a text file while retaining the formatting
 thumbnail-img: /assets/img/sas.png
 tags: [sas,file,read,write,modify,keep,format,formatting]
 ---

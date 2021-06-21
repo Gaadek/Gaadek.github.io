@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extract folder, filename and file extension from filepath
+title: Extract folder, name and extension from file path
 thumbnail-img: /assets/img/sas.png
 tags: [sas,snippet,check,dataset,exist]
 ---

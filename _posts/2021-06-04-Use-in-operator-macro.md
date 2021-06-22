@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using the `in` operator in macro functions
+title: Using the 'in' operator in macro functions
 thumbnail-img: /assets/img/sas.png
 tags: [sas,snippet,in,operator, macro]
 ---

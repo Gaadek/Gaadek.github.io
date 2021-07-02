@@ -23,7 +23,7 @@ Its drawbacks are it's a lot of code to perform a simple loop and, in case of cr
         run;
         
         *-- Open the input dataset --*;
-	    %let hpcurvgl = %sysfunc(open(input_dataset));
+	%let hpcurvgl = %sysfunc(open(input_dataset));
         
         *-- Ensure the dataset has been successfully opened --*;
         %if &hpcurvgl. %then %do;

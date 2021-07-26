@@ -5,13 +5,11 @@ thumbnail-img: /assets/img/sas.png
 tags: [sas,loop,macro,fetch,open,close,cursor]
 ---
 
-This topic explains how to use a dataset to define a macro loop. OK, I need to clarify what this means. A macro loop is basically a set of instructions (macro function, macro code, SAS code...) to execute a certain number of times.  
-If we know by advance how many time we have too loop, that's perfect, you don't need to go further. But if you know only at runtime the list of items to process, then it's a good idea to store 
-these iterms in a dataset, then to loop over this dataset to call a macro. Typic example is: you build a list of subjects, then you generate one report per patient.
+This topic explains how to use a SAS dataset as the source definition of a loop. This is very useful when you collect data at run time and then want to use these data to perform the same repeated task (e.g. build a list of items, then generate a report for each item)
 
 # Solution #1: cursor/fetch.
-This method is the one I usualy implement because it's clear, easy to understand/review and **efficient**.  
-Its drawbacks are it's a lot of code to perform a simple loop and, in case of crash in the middle of the loop, the handler opened to read the dataset remains open and you'll have to restart your SAS session.
+This method is the one I usually implement because it's clear, easy to understand/review and **efficient**.  
+Its drawbacks are it's a lot of code to perform a simple loop and, in case of code crash in the middle of the loop, the handler used to read the dataset remains open and you cannot close it. So if you run a second time the code, SAS will notify you that the SAS dataset is already in use. You'll have no other choice than restarting your SAS session.
 ```
     %macro loop;
         ...
@@ -47,3 +45,38 @@ Its drawbacks are it's a lot of code to perform a simple loop and, in case of cr
       
     %loop;
 ```
+
+# Solution #2: macro variable loop.
+This method is easier than method #1 because it does not requires to open the SAS dataset. However, it has some limitations, you have to use one variable only or create as many variables as needed.
+```
+    %macro loop;
+        ...
+        data input_dataset;
+            *-- This is out input dataset. It's probably build outside the macro --*;
+            attrib c_var format=$30.;
+            attrib n_var format=8.;
+            ...
+        run;
+        
+		*-- Get the list of items in a macro variable --*;
+		proc sql noprint;
+			select		distinct c_var
+          	into		:my_list separated by ' '
+			from		input_dataset
+			;
+		quit;
+
+        *-- Loop --*;
+		%do i=1 %to %sysfunc(countw(&my_list));
+			%let char_var = %scan(&my_list, &i);
+			
+			*-- Do what you want here --*;
+			*-- Call another macro --*;
+			*-- Create a new dataset --*;
+			*-- Or anything else you want ! --*;
+		%end;
+    %mend;
+      
+    %loop;
+```
+

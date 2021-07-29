@@ -21,7 +21,7 @@ Its drawbacks are it's a lot of code to perform a simple loop and, in case of co
         run;
         
         *-- Open the input dataset --*;
-	%let hpcurvgl = %sysfunc(open(input_dataset));
+        %let hpcurvgl = %sysfunc(open(input_dataset));
         
         *-- Ensure the dataset has been successfully opened --*;
         %if &hpcurvgl. %then %do;
@@ -58,25 +58,25 @@ This method is easier than method #1 because it does not requires to open the SA
             ...
         run;
         
-		*-- Get the list of items in a macro variable --*;
-		proc sql noprint;
-			select		distinct c_var
-          	into		:my_list separated by ' '
-			from		input_dataset
-			;
-		quit;
+        *-- Get the list of items in a macro variable --*;
+        proc sql noprint;
+            select      distinct c_var
+            into        :my_list separated by ' '
+            from        input_dataset
+            ;
+        quit;
 
         *-- Loop --*;
-		%do i=1 %to %sysfunc(countw(&my_list));
-			%let char_var = %scan(&my_list, &i);
-			
-			*-- Do what you want here --*;
-			*-- Call another macro --*;
-			*-- Create a new dataset --*;
-			*-- Or anything else you want ! --*;
-		%end;
+        %do i=1 %to %sysfunc(countw(&my_list));
+            %let char_var = %scan(&my_list, &i);
+            
+            *-- Do what you want here --*;
+            *-- Call another macro --*;
+            *-- Create a new dataset --*;
+            *-- Or anything else you want ! --*;
+        %end;
     %mend;
-      
+        
     %loop;
 ```
 

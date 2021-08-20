@@ -18,7 +18,7 @@ This works, but honestly, we can replace that by a more elegant code!
 ## Sample
 ```
     ...
-    *-- version to extract the current date in YYYYMMDDformat --*;
+    *-- version to extract the current date in YYYYMMDD format --*;
     %let yyyymmdd	= %sysfunc(date(),yymmddn8.);
     
     *-- version to extract the current date & time in YYYYMMDD_HHMI format --*;

@@ -19,12 +19,12 @@ This works, but honestly, we can replace that by a more elegant code!
 ```
     ...
     *-- version to extract the current date in YYYYMMDD format --*;
-    %let yyyymmdd	= %sysfunc(date(),yymmddn8.);
+    %let yyyymmdd	= %sysfunc(date(), yymmddn8.);
     
     *-- version to extract the current date & time in YYYYMMDD_HHMI format --*;
-    %let yyyymmdd_hhmi = %sysfunc(date(),yymmddn8.)_%sysfunc(compress(%sysfunc(time(),tod5.), , dk));
+    %let yyyymmdd_hhmi = %sysfunc(date(), yymmddn8.)_%sysfunc(compress(%sysfunc(time(), tod5.), , dk));
     
     *-- version to extract the current date & time in YYYYMMDD_HHMISS format --*;
-    %let yyyymmdd_hhmiss = %sysfunc(date(),yymmddn8.)_%sysfunc(compress(%sysfunc(time(),tod8.), , dk));
+    %let yyyymmdd_hhmiss = %sysfunc(date(), yymmddn8.)_%sysfunc(compress(%sysfunc(time(), tod8.), , dk));
     ...
 ```

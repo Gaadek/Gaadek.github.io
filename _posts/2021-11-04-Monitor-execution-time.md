@@ -20,7 +20,7 @@ The second part consist in stopping the timer and calculating the execution dura
 *-- Stop our custom timer --*;
 data _null_;
 	duration = datetime() - &_timer_start;
-	put 30*'-' / ' Execution duration:' duration time13.2 / 30*'-';
+	put 50*'-' / ' Execution duration:' duration time13.2 / 50*'-';
 run;
 ```
 

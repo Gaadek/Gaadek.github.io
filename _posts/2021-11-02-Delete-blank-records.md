@@ -10,11 +10,11 @@ Let's say you've got a variables "issues" that must report all issues encountere
 It can be messy to do that manually, so instead I suggest to use a function that will automatically appends some content to an existing value, using a predefined delimiter.
 
 ```
-  *-- Fill imported data into the expected structure --*;
-	data ...;
-		set ...;
+*-- Fill imported data into the expected structure --*;
+data ...;
+	set ...;
 
-    *-- Remove blank records --*;
-		if missing(cats(of _all_)) then delete;
-	run;
+	*-- Remove blank records --*;
+	if missing(cats(of _all_)) then delete;
+run;
 ```

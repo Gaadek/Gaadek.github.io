@@ -9,10 +9,9 @@ Short post to share my method on how to create empty datasets (no record) withou
 
 ```
 data struct (drop=i);
-	attrib	a format=$10.
-		  	b format=8.
-		  	c format=date9.
-  	;
+	attrib a format=$10.;
+	attrib b format=8.;
+	attrib c format=date9.;
 
 	set _null_;
 

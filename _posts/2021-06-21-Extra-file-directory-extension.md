@@ -12,16 +12,16 @@ This snippet provides useful methods to extract from a file path:
 
 ## Sample
 ```
-    %let file_path=/root/folder/subfolder/file.txt;
+    %let file_path=/root/folder/subfolder/file with weird char.txt;
     
-    %let _f_dir = %substr(&file_path, 1, %sysfunc(findc(&file_path, /, b)) - 1);
+    %let _f_dir = %substr(%nrquote(&file_path), 1, %sysfunc(findc(%nrquote(&file_path), /, b)) - 1);
     * returns "/root/folder/subfolder"
     * can removes the '-1' to the subsrt function so the trailing slash will we returned
     
-    %let _f_name = %scan(&file_path, -1, /);
+    %let _f_name = %scan(%nrquote(&file_path), -1, /);
     * returns "file.txt"
     
-    %let _f_ext = %scan(&file_path, -1, .);
+    %let _f_ext = %scan(%nrquote(&file_path), -1, .);
     * returns "txt"
     ...
 ```

@@ -96,7 +96,7 @@ And
 And now, perform the first check about structure of the Excel file vs structure of the definition:  
 Does the Excel file contain the expected number of columns (aka variables)?
 ```
-  *-------------------------------------------------*;
+	*-------------------------------------------------*;
 	*-- Check input file structure                  --*;
 	*-------------------------------------------------*;
 
@@ -130,7 +130,7 @@ As you can see, in case of error, we exit the macro and so we don't run useless 
 Next check is:
 Does the Excel file contain the expected headers?
 ```
-  *-- Retrieve the headers of the Excel file --*;
+	*-- Retrieve the headers of the Excel file --*;
 	proc sql noprint;
 		select		strip(lowcase(name)),
 					varnum
@@ -175,7 +175,7 @@ We will do 2 things:
 
 To avoid collision in case of transtyping, we rename all the input variables:
 ```
-  *-------------------------------------------------*;
+	*-------------------------------------------------*;
 	*-- Rename variables in raw_data				--*;
 	*-------------------------------------------------*;
 
@@ -224,7 +224,7 @@ Now, all input variables are `v_1`, `v_2`, ...
 Next, we have to identify the variables to be converted and the SAS variable name to be assigned.  
 To make things easy, let's start by collecting these information in a dataset:
 ```
-  *-- Built a mapping table between input variables and output variables --*;
+	*-- Built a mapping table between input variables and output variables --*;
 	proc sql noprint;
 		create table conv as
 			select		r.varnum,
@@ -276,7 +276,7 @@ Next, use this mapping dataset to create SAS statements we'll be able to use to 
 
 Finally, create the output dataset:
 ```
-  *-- Fill imported data into the expected structure --*;
+	*-- Fill imported data into the expected structure --*;
 	data imp_data (drop = v_:);
 		set struct raw_data;
 

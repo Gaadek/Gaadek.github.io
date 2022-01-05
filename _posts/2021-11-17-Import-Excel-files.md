@@ -176,7 +176,7 @@ We will do 2 things:
 To avoid collision in case of transtyping, we rename all the input variables:
 ```
 	*-------------------------------------------------*;
-	*-- Rename variables in raw_data				--*;
+	*-- Rename variables in raw_data		--*;
 	*-------------------------------------------------*;
 
 	*-- Get the list of variables in raw_data --*;

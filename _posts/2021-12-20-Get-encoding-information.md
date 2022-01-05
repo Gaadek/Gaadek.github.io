@@ -5,7 +5,7 @@ thumbnail-img: /assets/img/sas.png
 tags: [sas,encoding]
 ---
 
-In this topic I propose to propose solution to encoding issues.  
+In this topic I do some proposal to cover encoding.  
 
 1) How to identify the encoding of the current SAS session?  
     Use the `sysencoding` macro variable:

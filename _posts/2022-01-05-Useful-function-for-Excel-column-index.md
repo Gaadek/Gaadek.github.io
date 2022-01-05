@@ -20,3 +20,61 @@ On first review, it may appear difficult to handle, but in fact, it isn't. Let's
     
     The solution Here, it's simple: if the index is more than 26, decompose the value as 2 characters, the first one being , so we must build a string (e.g. AA) decompose the numeric index in multiple of 26, wich is basicaly an euclidean division.
  
+    ```
+    *-- Option to avoid warnings in case of re-run of proc fcmp --*;
+    options cmplib = _null_;
+
+    *-- Build a user package to store functions --*;
+    proc fcmp outlib=work.funcs.tmp;
+	    *-- Function to convert an index (1, 2, 3) to an Excel index (A, B, C) --*;
+	    function xls_col_conv(int_index) $;
+    		length res $10;
+    		res = '';
+
+	    	q = int((int_index - 1) / 26);
+    
+		    if q > 0 then do;
+			    do while (q > 26);
+				    q = int((q - 1) / 26);
+				    res = strip(res) || byte(q + 64);
+			    end;
+
+			    res = strip(res) || byte(q + 64);
+		    end;
+
+		    m = mod(int_index - 1, 26) + 1;
+		    res = strip(res) || byte(m + 64);
+
+		    return(res);
+	    endsub;
+    run;
+
+    options cmplib=work.funcs;
+    ```
+
+    ```
+    *-- Option to avoid warnings in case of re-run of proc fcmp --*;
+    options cmplib = _null_;
+
+    *-- Build a user package to store functions --*;
+    proc fcmp outlib=work.funcs.tmp;
+        *-- Function to convert an Excel column index (A,B,C...) to an integer index (1,2,3...) --*;
+        function xls_idx_to_num(excel_index $);
+            length res 8;
+            res = .;
+            put "Excel index: " excel_index;
+
+            do _t = 1 to length(excel_index);
+                coef = length(excel_index) - _t;
+                cur_val = rank(char(upcase(excel_index), _t)) - 64;
+
+                if coef then	res = sum(res, cur_val * 26 * coef);
+                else			res = sum(res, cur_val);
+            end;
+
+            return(res);
+        endsub;
+    run;
+
+    options cmplib=work.funcs;
+    ```

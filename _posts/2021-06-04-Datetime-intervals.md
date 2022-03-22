@@ -20,6 +20,8 @@ Its syntax is: *intck(time_unit, start_date, end_date, method)*
 * time_unit can be any interval unit (e.g., day, month, year, qtr, hour)
 * start_date and end_date are date or datetime
 * method is C (continuous) or D (discrete)
+    *  For continuous method, the interval in months between February 14, 2021, and March 12, 2021, is zero.
+    *  For discrete method, the interval in months between February 28, 2021, and March 11, 2021, is one.
 
 ```
     ...

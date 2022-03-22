@@ -16,7 +16,7 @@ Intervals Used with Date and Time Functions](https://documentation.sas.com/doc/e
 
 ## intck
 intck returns the number of time units between two dates or datetimes.  
-It syntax is: *intck(time_unit, start_date, end_date, method)*
+Its syntax is: *intck(time_unit, start_date, end_date, method)*
 * time_unit can be any interval unit (e.g., day, month, year, qtr, hour)
 * start_date and end_date are date or datetime
 * method is C (continuous) or D (discrete)
@@ -39,7 +39,7 @@ It syntax is: *intck(time_unit, start_date, end_date, method)*
 
 ## intnx
 intnx returns a date which is a specified number of time units away from a date or datetime.  
-It syntax is: *intnx(time_unit, start_date, increment, alignement)*
+Its syntax is: *intnx(time_unit, start_date, increment, alignement)*
 * time_unit can be any interval unit (e.g., day, month, year, qtr, hour)
 * start_date is date or datetime
 * alignement is B (beginning) or M (middle) or E (end) or S (same)

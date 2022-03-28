@@ -13,7 +13,7 @@ In this topic I do some proposal to cover encoding.
     %put >>> System encoding: &sysencoding;
     ```
 
-2) How to identify the encoding of a SAS dataset?  
+2) How to identify the encoding of a SAS dataset?   
     Use the `encoding` value from dictionary.tables:
     ```
     %macro display_encoding(ds_in);

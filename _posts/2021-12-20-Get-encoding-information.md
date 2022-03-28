@@ -8,13 +8,13 @@ tags: [sas,encoding]
 In this topic I do some proposal to cover encoding.  
 
 1) How to identify the encoding of the current SAS session?  
-    Use the `sysencoding` macro variable:
+    Use the `sysencoding` macro variable:  
     ```
     %put >>> System encoding: &sysencoding;
     ```
 
 2) How to identify the encoding of a SAS dataset?  
-    Use the `encoding` value from dictionary.tables:
+    Use the `encoding` value from dictionary.tables:  
     ```
     %macro display_encoding(ds_in);
         *-- Set work as the default library --*;
